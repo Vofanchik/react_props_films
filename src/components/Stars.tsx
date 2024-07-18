@@ -1,6 +1,11 @@
 import Star from './Star';
+import { FC } from 'react'
 
-function Stars({ count }) {
+interface StarProps {
+    count: number
+}
+
+const Stars: FC<StarProps> = ({ count }) => {
     if (count > 5 || count < 1) { return null };
     const amountOfStars = Array.from({length:count}, (_, index) => { 
         return index;
